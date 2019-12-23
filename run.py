@@ -13,14 +13,15 @@ break_start = datetime.datetime(2019,12,23)
 break_end = datetime.datetime(2019,12,28)
 print("Hello,")
 print("")
-print("Sadly, it is too late for me to enable a break manually. I need to request a manual break override - from ", break_start, "to", break_end, "for following goals")
+print("Sadly, it is too late for me to enable a break manually.")
+print("I need to request a manual break override - from ", break_start.date(), "to", break_end.date(), "for following goals:")
 print("")
 for goal in goals:
     # Goal objects expose all API data as dynamic properties.
     # http://api.beeminder.com/#attributes-2
 
     ep = datetime.datetime(1970,1,1,0,0,0)
-    x = (break_end- ep).total_seconds()
+    x = (break_end - ep).total_seconds()
     needed = goal.get_needed(x)
     if needed > 0:
         print(goal.slug)
