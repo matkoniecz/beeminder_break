@@ -1,4 +1,5 @@
 import time
+import datetime
 from pyminder.pyminder import Pyminder
 
 def token():
@@ -10,11 +11,15 @@ goals = pyminder.get_goals()
 for goal in goals:
     # Goal objects expose all API data as dynamic properties.
     # http://api.beeminder.com/#attributes-2
-    print(goal.slug)
-    print(goal.title)
-    print(goal.rate)
-    print(goal.fineprint)
-    print(goal.losedate)
+
+    ep = datetime.datetime(1970,1,1,0,0,0)
+    x = (datetime.datetime(2019,12,28,0,0,0)- ep).total_seconds()
+    needed = goal.get_needed(x)
+    if needed > 0:
+        print(goal.slug)
+        #print(goal.title)
+        #print(goal.fineprint)
+        #print(goal.losedate) # unix timestamp
 
 
     # Goal objects also implement a handful of helper functions.
