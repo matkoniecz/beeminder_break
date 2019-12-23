@@ -1,2 +1,2 @@
 pyminder
-natlibpy
+natlibpy # needed as pyminder is missing this dependency (TODO - fix it upstream)
