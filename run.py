@@ -5,7 +5,7 @@ from pyminder.pyminder import Pyminder
 def token():
     return open("token.secret").read()
 
-pyminder = Pyminder(user='[your username]', token=token())
+pyminder = Pyminder(user='[your username - dummy field]', token=token())
 
 goals = pyminder.get_goals()
 for goal in goals:
