@@ -2,16 +2,19 @@ import time
 import datetime
 from pyminder.pyminder import Pyminder
 
+def main():
+    break_start = datetime.datetime(2019,12,23)
+    break_end = datetime.datetime(2019,12,28)
+    enable_breaks(break_start, break_end)
+
 def token():
     return open("token.secret").read()
 
-def main():
+def enable_breaks(break_start, break_end):
     pyminder = Pyminder(user='[your username - dummy field]', token=token())
 
     goals = pyminder.get_goals()
 
-    break_start = datetime.datetime(2019,12,23)
-    break_end = datetime.datetime(2019,12,28)
     print("Hello,")
     print("")
     print("Sadly, it is too late for me to enable a break manually.")
