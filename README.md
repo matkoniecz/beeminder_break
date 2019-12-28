@@ -1,8 +1,14 @@
-Beeminder goal lister
+Automate setting Beeminder break
 ===========================
 
-To install: `pip3 install --user -r requirements.txt`
+Useful for setting break on multiple goals at once.
 
-# Running tests
+Implemented using [pyminder](https://github.com/narthur/pyminder).
+
+## install
+
+`pip3 install --user -r requirements.txt`
+
+## Running tests
 
 ```nosetests3``` or ```python3 -m unittest```
