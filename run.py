@@ -20,6 +20,7 @@ for goal in goals:
     # Goal objects expose all API data as dynamic properties.
     # http://api.beeminder.com/#attributes-2
 
+    # https://stackoverflow.com/a/46090618/4130619
     ep = datetime.datetime(1970,1,1,0,0,0)
     x = (break_end - ep).total_seconds()
     needed = goal.get_needed(x)
